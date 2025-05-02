@@ -16,44 +16,94 @@
 
 <body>
     
-    <header>
-        <div class="container">
-
-          <img src="imagenes/logo.png" alt="logo">  
-          
-
-         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="/productos">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                
-            </ul>
-         </nav>
-
-         <div class="search-bar">
-            <input type="text" placeholder="Buscar">
-            <button><i class="fas fa-search"></i></button>
-         </div>
-
-		 <div class="user">
-		 	     <button id="userIcon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></button>
-		 	     <div id="userMenu" class="user-menu">
-		 	         <a id="profileLink" href="perfil.html" style="display: none;">Perfil</a>
-		 			 <a id="subirProducto" style="display: none;" href="#" onclick="navigateToSubirProductos(); return false;">Subir producto</a>
-		 			 <a id="gestionarUsuarios" style="display: none;" href="#" onclick="navigateToUsuarios(); return false;">Usuarios</a>
-		 			 <a id="gestionarProductos" style="display: none;" href="#" onclick="navigateToProductos(); return false;">Productos</a>
-		 	         <a id="logoutLink" href="#" style="display: none;">Cerrar sesión</a>
-		 	         <a id="loginLink" href="login.html" style="display: none;">Ingresar</a>
-		 	     </div>
-		 	 </div>
-         <div class="cart">
-          <a href="carrito.html">
-              <button><i class="fa fa-shopping-cart fa-lg " aria-hidden="true" ></i></button>
-          </a>
-       </div>
-        </div>
-    </header>
+	<header>
+		  <div class="header-desktop container">
+		    <img src="imagenes/logo.png" alt="logo">
+		
+		    <nav>
+		      <ul>
+		        <li><a href="index.html">Inicio</a></li>
+		        <li><a href="/productos">Productos</a></li>
+		        <li><a href="contacto.html">Contacto</a></li>
+		      </ul>
+		    </nav>
+		
+		    <div class="search-bar">
+		      <input type="text" placeholder="Buscar">
+		      <button><i class="fas fa-search"></i></button>
+		    </div>
+		
+		    <div class="user">
+		      <button id="userIcon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></button>
+		      <div id="userMenu" class="user-menu">
+		        <a id="profileLink" href="perfil.html" style="display: none;">Perfil</a>
+		        <a id="subirProducto" style="display: none;" href="#" onclick="navigateToSubirProductos(); return false;">Subir producto</a>
+		        <a id="gestionarUsuarios" style="display: none;" href="#" onclick="navigateToUsuarios(); return false;">Usuarios</a>
+		        <a id="gestionarProductos" style="display: none;" href="#" onclick="navigateToProductos(); return false;">Productos</a>
+		        <a id="logoutLink" href="#" style="display: none;">Cerrar sesión</a>
+		        <a id="loginLink" href="login.html" style="display: none;">Ingresar</a>
+		      </div>
+		    </div>
+		
+		    <div class="cart">
+		      <a href="carrito.html">
+		        <button><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></button>
+		      </a>
+		    </div>
+		  </div>
+		
+		  <!-- Mobile version -->
+		  <div class="header-mobile">
+		    <div class="top-row">
+		      <img src="imagenes/logo.png" alt="logo" class="logo-mobile">
+		
+		      <div class="mobile-icons">
+				 
+				<div class="user user-mobile">
+				  <button id="userIconMobile"><i class="fa fa-user"></i></button>		
+				  <div id="userMenuMobile" class="user-menu">
+				    <a id="profileLinkMobile" href="perfil.html" style="display: none;">Perfil</a>
+				    <a id="subirProductoMobile" style="display: none;" href="#" onclick="navigateToSubirProductos(); return false;">Subir producto</a>
+				    <a id="gestionarUsuariosMobile" style="display: none;" href="#" onclick="navigateToUsuarios(); return false;">Usuarios</a>
+				    <a id="gestionarProductosMobile" style="display: none;" href="#" onclick="navigateToProductos(); return false;">Productos</a>
+				    <a id="logoutLinkMobile" href="#" style="display: none;">Cerrar sesión</a>
+				    <a id="loginLinkMobile" href="login.html" style="display: none;">Ingresar</a>
+				  </div>
+				</div>
+	
+		        <a href="carrito.html"><button><i class="fa fa-shopping-cart"></i></button></a>
+				<button class="menu-toggle" onclick="toggleSideMenu()">
+						  <i class="fas fa-bars"></i>
+				 </button>
+		      </div>
+		    </div>
+		
+		    <div class="search-bar-mobile">
+		      <input type="text" placeholder="Buscar">
+		      <button><i class="fas fa-search"></i></button>
+		    </div>
+			
+			 
+			
+			<!-- Panel lateral (menú oculto) -->
+			<div id="sideMenu" class="side-menu">
+			  <button class="close-btn" onclick="toggleSideMenu()">×</button>
+			  <ul>
+			    <li><a href="index.html">Inicio</a></li>
+			    <li><a href="/productos">Productos</a></li>
+			    <li><a href="contacto.html">Contacto</a></li>
+			  </ul>
+			</div>
+	
+			<script>
+			  function toggleSideMenu() {
+			    const menu = document.getElementById("sideMenu");
+			    menu.classList.toggle("open");
+			  }
+			</script>
+	
+	
+		</header>
 
       
       
