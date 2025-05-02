@@ -63,6 +63,7 @@ entities\Factura.class
 repositories\FacturaRepository.class
 config\JwtAuthFilter.class
 services\CarritoDeComprasService.class
+controllers\PingController.class
 controllers\ClienteController.class
 services\DomicilioServiceImpl.class
 entities\CarritoDeCompras.class

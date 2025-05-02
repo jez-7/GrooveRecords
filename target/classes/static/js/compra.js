@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // solicitar la URL de pago a Mercado Pago al backend
-            const response = await fetch('http://localhost:8080/api/v1/mp/pago', {
+            const response = await fetch('https://groove-records-nag2.onrender.com/api/v1/mp/pago', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
          
-            const pagoResponse = await fetch('http://localhost:8080/api/v1/mp/pago', {
+            const pagoResponse = await fetch('https://groove-records-nag2.onrender.com/api/v1/mp/pago', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,   
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = pagoData.url;  // redirigir a la URL de pago de Mercado Pago
 
            
-            const registroResponse = await fetch('http://localhost:8080/api/v1/clientes/registro', {
+            const registroResponse = await fetch('https://groove-records-nag2.onrender.com/api/v1/clientes/registro', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

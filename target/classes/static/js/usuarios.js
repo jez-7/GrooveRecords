@@ -33,7 +33,7 @@ function displayUsers(users) {
 async function loadUsers() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('api/v1/usuarios/listar', {
+        const response = await fetch('https://groove-records-nag2.onrender.com//api/v1/usuarios/listar', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -64,7 +64,7 @@ async function deleteUser(userId) {
 
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`api/v1/usuarios/${userId}`, {
+        const response = await fetch(`https://groove-records-nag2.onrender.com/api/v1/usuarios/${userId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -95,7 +95,7 @@ async function cambiarRol(userId, selectElement) {
     console.log('Nuevo Rol:', nuevoRol);
 
     try {
-        const response = await fetch(`api/v1/usuarios/cambiarRol/${userId}`, {
+        const response = await fetch(`https://groove-records-nag2.onrender.com/api/v1/usuarios/cambiarRol/${userId}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,

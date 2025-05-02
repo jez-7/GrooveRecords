@@ -8,7 +8,7 @@ const idProducto = urlParams.get('id');
 
 async function detallesProducto() {
     try {
-        const response = await fetch('api/v1/productos', {
+        const response = await fetch('https://groove-records-nag2.onrender.com/api/v1/productos', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',

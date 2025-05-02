@@ -76,9 +76,9 @@ public class MercadoPagoController {
 	        }
 	        
 	        PreferenceBackUrlsRequest backUrls = PreferenceBackUrlsRequest.builder()
-	        		.success("http://localhost:8080/success.html") // URL PAGO CONFIRMADO
-	        		.pending("http://localhost:8080/carrito.html") // URL PAGO PENDIENTE
-	        		.failure("http://localhost:8080/carrito.html") // URL PAGO FALLIDO
+	        		.success("https://groove-records-nag2.onrender.com/success.html") // URL PAGO CONFIRMADO
+	        		.pending("https://groove-records-nag2.onrender.com/carrito.html") // URL PAGO PENDIENTE
+	        		.failure("https://groove-records-nag2.onrender.com/carrito.html") // URL PAGO FALLIDO
 	        		.build();
 	        
 	        logger.info("Back URLs configuradas: Success={}, Pending={}, Failure={}",
@@ -88,7 +88,7 @@ public class MercadoPagoController {
 	                .items(items)
 	                .backUrls(backUrls)
 	                .notificationUrl("") //URL DONDE DEBERIA LLEGAR LA NOTIFICACION DE EN QUE ESTADO QUEDO EL PAGO
-	                //.autoReturn("approved")
+	                .autoReturn("approved")
 	                .build();
 	        
 	        logger.info("PreferenceRequest creado con autoReturn: {}", preferenceRequest.getAutoReturn());

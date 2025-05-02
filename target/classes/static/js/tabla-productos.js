@@ -28,7 +28,7 @@ function mostrarProductos(productos) {
 async function cargarProductos() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('/api/v1/productos/listarProductos', {
+        const response = await fetch('https://groove-records-nag2.onrender.com/api/v1/productos/listarProductos', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -58,7 +58,7 @@ async function deleteProducto(productoId) {
 
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`api/v1/productos/eliminar/${productoId}`, {
+        const response = await fetch(`https://groove-records-nag2.onrender.com/api/v1/productos/eliminar/${productoId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,
