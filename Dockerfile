@@ -13,6 +13,7 @@ COPY ./.mvn /root/.mvn
 COPY ./mvnw /root
 
 # DEPENDENCIAS
+RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline
 
 # CODIGO FUENTE DENTRO DEL CONTENEDOR
