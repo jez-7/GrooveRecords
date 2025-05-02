@@ -37,7 +37,7 @@ async function cargarProductosCarrito() {
             throw new Error('No se encontró token de autenticación');
         }
 
-        const response = await fetch('http://localhost:8080/api/carrito/productos', {
+        const response = await fetch('https://groove-records-nag2.onrender.com/api/carrito/productos', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -70,7 +70,7 @@ async function eliminarProducto(productoId) {
             throw new Error('No se encontró token de autenticación');
         }
 
-        const response = await fetch(`http://localhost:8080/api/carrito/productos/${productoId}`, {
+        const response = await fetch(`https://groove-records-nag2.onrender.com/api/carrito/productos/${productoId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`

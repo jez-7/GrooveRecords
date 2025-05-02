@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Enviar datos actualizados al servidor
-    fetch('/api/v1/usuarios/actualizar', {
+    fetch('https://groove-records-nag2.onrender.com/api/v1/usuarios/actualizar', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
  const token = localStorage.getItem('token');
  console.log('Token being used:', token);
 
-    fetch('/api/v1/usuarios/perfil', {
+    fetch('https://groove-records-nag2.onrender.com/api/v1/usuarios/perfil', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,

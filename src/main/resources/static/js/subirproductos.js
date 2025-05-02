@@ -18,7 +18,7 @@ async function subirProductos() {
     }
 
     try {
-        const response = await fetch('api/v1/productos/crearProducto', {
+        const response = await fetch('https://groove-records-nag2.onrender.com/api/v1/productos/crearProducto', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,

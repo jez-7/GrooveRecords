@@ -69,7 +69,7 @@ async function finalizarCompra() {
 	let productosCarrito = [];
 	try {
         
-        const response = await fetch('/api/carrito/productos', {
+        const response = await fetch('https://groove-records-nag2.onrender.com/api/carrito/productos', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ async function finalizarCompra() {
             stock: producto.cantidad,
         }));
 
-        const descontarResponse = await fetch('api/v1/productos/descontarStock', {
+        const descontarResponse = await fetch('https://groove-records-nag2.onrender.com/api/v1/productos/descontarStock', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ async function finalizarCompra() {
 	
 	// GUARDAR DATOS EN COMPRA
 	try {
-	    const response = await fetch('http://localhost:8080/api/v1/compras/guardar', {
+	    const response = await fetch('https://groove-records-nag2.onrender.com/api/v1/compras/guardar', {
 	        method: 'POST',
 	        headers: {
 	            'Content-Type': 'application/json',
