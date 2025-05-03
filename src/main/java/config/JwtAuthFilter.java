@@ -32,6 +32,12 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
         final String username;
+        String path = request.getRequestURI();
+
+        if (path.equals("/ping") || path.startsWith("/css") || path.startsWith("/js") || path.startsWith("/img")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
         
         if (authHeader == null || !authHeader.startsWith("Bearer")) {
             filterChain.doFilter(request, response);

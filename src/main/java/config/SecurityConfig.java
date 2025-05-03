@@ -25,11 +25,6 @@ public class SecurityConfig   {
     private  JwtService jwtService;
     @Autowired
     private CustomUserDetailsService userDetailsService;
-    
-   
-
-    
-
 
     @Bean
     JwtAuthFilter jwtAuthFilter() {
@@ -43,7 +38,8 @@ public class SecurityConfig   {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(requests -> requests
-                .requestMatchers("/api/v1/auth/**").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/ping").permitAll()
+                    .requestMatchers("/api/v1/auth/**").permitAll()
                 .requestMatchers("/subirproductos.html", "/usuarios.html", "/contacto/enviar").permitAll() // Permitir acceso a la página
                 .requestMatchers("/api/v1/productos/verificarPermisoSubir", "/api/v1/usuarios/listar", "/api/v1/productos/listar")
                 .hasAnyAuthority("Administrador", "Empleado")              
