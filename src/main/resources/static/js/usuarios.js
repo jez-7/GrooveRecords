@@ -33,10 +33,10 @@ function displayUsers(users) {
 async function loadUsers() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://groove-records-nag2.onrender.com//api/v1/usuarios/listar', {
+        const response = await fetch('https://groove-records-nag2.onrender.com/api/v1/usuarios/listar', {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`,
+                'Authorization': 'Bearer ${token}',
                 'Content-Type': 'application/json'
             }
         });
@@ -64,10 +64,10 @@ async function deleteUser(userId) {
 
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`https://groove-records-nag2.onrender.com/api/v1/usuarios/${userId}`, {
+        const response = await fetch('https://groove-records-nag2.onrender.com/api/v1/usuarios/${userId}', {
             method: 'DELETE',
             headers: {
-                'Authorization': `Bearer ${token}`,
+                'Authorization': 'Bearer ${token}',
                 'Content-Type': 'application/json'
             }
         });
@@ -95,10 +95,10 @@ async function cambiarRol(userId, selectElement) {
     console.log('Nuevo Rol:', nuevoRol);
 
     try {
-        const response = await fetch(`https://groove-records-nag2.onrender.com/api/v1/usuarios/cambiarRol/${userId}`, {
+        const response = await fetch('https://groove-records-nag2.onrender.com/api/v1/usuarios/cambiarRol/${userId}', {
             method: 'PUT',
             headers: {
-                'Authorization': `Bearer ${token}`,
+                'Authorization': 'Bearer ${token}',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ rol: nuevoRol })
@@ -109,7 +109,7 @@ async function cambiarRol(userId, selectElement) {
             
             const errorText = await response.text();
             console.error('Error response:', errorText);
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error("HTTP error! status: ${response.status});
         }
 
         loadUsers();
